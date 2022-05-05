@@ -5,6 +5,7 @@ import Home from '../screens/home';
 import ReviewDetails from '../screens/reviewDetails';
 import Header from '../shared/header';
 import React from 'react';
+import { Image } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,6 +14,12 @@ export default function HomeStack({ navigation }) {
     <Stack.Navigator
       initialRouteName="Home"
       screenOptions={{
+        headerBackground: () => (
+          <Image
+            style={{ height: '100%' }}
+            source={require('../assets/game_bg.png')}
+          />
+        ),
         headerTintColor: '#444',
       }}
     >
