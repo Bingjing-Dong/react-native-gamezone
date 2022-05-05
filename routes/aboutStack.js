@@ -1,36 +1,26 @@
 /** @format */
-
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Home from '../screens/home';
-import ReviewDetails from '../screens/reviewDetails';
+import About from '../screens/about';
 import Header from '../shared/header';
 import React from 'react';
 
 const Stack = createNativeStackNavigator();
 
-export default function HomeStack({ navigation }) {
+export default function AboutStack({ navigation }) {
   return (
     <Stack.Navigator
-      initialRouteName="Home"
       screenOptions={{
         headerTintColor: '#444',
       }}
     >
       <Stack.Screen
-        name="Home"
-        component={Home}
+        name="About"
+        component={About}
         options={() => ({
           headerTitle: () => (
-            <Header navigation={navigation} title="GameZone" />
+            <Header navigation={navigation} title="About GameZone" />
           ),
         })}
-      />
-      <Stack.Screen
-        name="ReviewDetails"
-        component={ReviewDetails}
-        options={{
-          title: 'Review Details',
-        }}
       />
     </Stack.Navigator>
   );
