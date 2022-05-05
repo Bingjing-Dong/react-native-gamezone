@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { StyleSheet, Text, View, Image, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 
 export default function Header({ title, navigation }) {
@@ -10,10 +10,7 @@ export default function Header({ title, navigation }) {
   };
 
   return (
-    <ImageBackground
-      style={styles.header}
-      source={require('../assets/game_bg.png')}
-    >
+    <View style={styles.header} source={require('../assets/game_bg.png')}>
       <MaterialIcons
         name="menu"
         size={28}
@@ -27,14 +24,14 @@ export default function Header({ title, navigation }) {
         />
         <Text style={styles.headerText}>{title}</Text>
       </View>
-    </ImageBackground>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    height: 60,
+    height: '100%',
     flex: 1,
     flexDirection: 'row',
     alignItems: 'center',
@@ -48,7 +45,7 @@ const styles = StyleSheet.create({
   },
   icon: {
     position: 'absolute',
-    left: 3,
+    left: 12,
   },
   headerTitle: {
     flexDirection: 'row',
